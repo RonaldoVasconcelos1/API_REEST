@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/RonaldoVasconcelos1/API_REEST/issues"
   },
-  "homepage": "https://github.com/RonaldoVasconcelos1/API_REEST#readme"
+  "homepage": "https://github.com/RonaldoVasconcelos1/API_REEST#readme",
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
 }

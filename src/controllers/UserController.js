@@ -44,7 +44,17 @@ class User {
   }
 
   async update(o_request, o_response) {
-    return o_response.json({method: 'update'})
+    try {
+      const o_user = o_request.body
+      if(!o_user) return o_response.status(400).end()
+      const o_updateUser = await userModel.update(o_user, o_request.params.id)
+      if(!o_updateUser) return o_response.status(404).end('User not found')
+      return o_response.json(o_updateUser)
+
+    } catch (error) {
+
+    }
+
   }
 }
 

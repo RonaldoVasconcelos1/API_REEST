@@ -31,5 +31,16 @@ class User {
         return o_error
     }
   }
+
+  async update(o_user, userId) {
+    try {
+      const o_response = await db('users')
+      .update(o_user)
+      .where({ id : userId })
+      return o_response
+    } catch (o_error) {
+        return o_error
+    }
+  }
 }
 export default new User()

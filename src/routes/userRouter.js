@@ -6,7 +6,7 @@ const router = new Router()
 router.get('/users', userController.list)
 router.get('/users/:id', userController.view)
 router.post('/users', userController.insert)
-router.update('/users/:id', userController.update)
+router.put('/users/:id', userController.update)
 
 
 export default router

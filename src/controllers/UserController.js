@@ -3,7 +3,12 @@ import encryptPassword from '../utils/Bcrypt'
 
 class User {
    async list(o_request, o_response) {
-    return o_response.json({method: 'list'})
+    try {
+      const o_users = await userModel.list()
+      return o_response.json(o_users)
+    } catch (error) {
+      return o_response.status(400).end()
+    }
   }
 
    async view(o_request, o_response) {

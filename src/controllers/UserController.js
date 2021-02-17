@@ -12,7 +12,14 @@ class User {
   }
 
    async view(o_request, o_response) {
-    return o_response.json({method: 'view'})
+    try {
+      const o_user = await userModel.view(o_request.params.id)
+      if(!o_user) return o_response.status(404).end('User not found')
+      return o_response.json(o_user)
+    } catch (o_error) {
+      console.log(o_error)
+      return o_response.status(400).end()
+    }
   }
 
    async viewByEmail(o_request, o_response) {

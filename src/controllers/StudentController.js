@@ -1,20 +1,23 @@
-import studentModel from '../controllers/studentModel'
+// import userModel from '../models/UserModel'
 
 class Student {
-  static async list(o_request, o_response) {
+  async list(o_request, o_response) {
     return o_response.json({method: 'list'})
   }
 
-  static async view(o_request, o_response) {
+  async view(o_request, o_response) {
     return o_response.json({method: 'view'})
   }
 
-  static async insert(o_request, o_response) {
-    return o_response.json({method: 'insert'})
+  async insert(o_request, o_response) {
   }
 
-  static async update(o_request, o_response) {
+  async update(o_request, o_response) {
     return o_response.json({method: 'update'})
+  }
+
+  async delete(o_request, o_response) {
+    return o_response.json({method: 'delete'})
   }
 }
 export default new Student()
